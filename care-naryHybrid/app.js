@@ -7,6 +7,13 @@
         models: {},
         data: {}
     };
+    
+    var foodDataSource = new kendo.data.DataSource({
+      type: "everlive",
+      transport: {
+          typeName: "Food"
+      }
+    });
 
     var bootstrap = function() {
         $(function() {
@@ -23,7 +30,12 @@
                 initial: 'signInView/view.html',
 
                 statusBarStyle: "black-translucent"
+            
             });
+        });
+        $("#food-list").kendoMobileListView({
+          dataSource: foodDataSource,
+          template: "#: Group #"
         });
     };
 

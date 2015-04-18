@@ -8,6 +8,16 @@
                     </label>
                 </li>
                 <li>
+                    <label>Food Group
+                        <!--<select type="kendo-drop-down-list">
+                             <option value="1">Albania</option>
+                             <option>Albnia</option>
+                             <option>Albana</option>
+                        dataSource= "foodDataSource"</select>-->
+                        <input data-role="value: Group">
+                    </label>
+                </li>
+                <li>
                     <label>Date/time
                         <input data-bind="value: foodViewModel.model.datetime" type="datetime-local">
                     </label>
@@ -17,12 +27,16 @@
                         <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text">
                     </label>
                 </li>
-                <li>
-                    <label>Food Group
-                        <input data-bind="value: foodViewModel.model.foodGroup" data-role="dropdownlist">
-                    </label>
-                </li>
             </ul>
+            <!--<ul id="food-list" data-role="listview" data-bind="value: Group"></ul>-->
+            <ul id="food-list"></ul>
+            <ul data-role="listview" data-style="inset">
+                  <li>
+                      <label>
+                          Food:<input type="text" data-bind="value: food">
+                      </label>
+                  </li>
+              </ul>
 
             <div class="button-group">
 
