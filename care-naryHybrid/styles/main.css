@@ -12,7 +12,7 @@
 }
 
 #kendoUiMobileApp .button-submit {
-    background-color: #10c4b2;
+    background-color: #009df2;
     color: white;
 }
 
@@ -50,3 +50,7 @@
 #kendoUiMobileApp .km-drawer-button:before {
     content: '\e077';
 }
+
+.km-flat .km-state-active, .km-flat .km-tabstrip .km-state-active{ 
+  background: #009df2;
+} 
