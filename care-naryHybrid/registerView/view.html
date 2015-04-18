@@ -1,0 +1,34 @@
+<div data-role="view" data-title="Register" data-layout="main" data-model="app.models.registerView">
+    <div id="registerViewModel" class="signup-view">
+        <h1 class="view-title">Register</h1>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input type="email" data-bind="value: registerViewModel.model.email" required>
+                    </label>
+                </li>
+                <li>
+                    <label>Username
+                        <input type="text" data-bind="value: registerViewModel.model.username" required>
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input type="password" data-bind="value: registerViewModel.model.password" required>
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: registerViewModel.register }">Register</a>
+            </div>
+        </form>
+
+
+        <div class="block">
+            <a href="#signInView/view.html">Sign In</a>
+        </div>
+
+    </div>
+</div>

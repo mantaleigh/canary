@@ -19,7 +19,7 @@
                 skin: 'flat',
 
                 // the application needs to know which view to load first
-                initial: 'home/view.html',
+                initial: 'signInView/view.html',
 
                 statusBarStyle: "black-translucent"
             });

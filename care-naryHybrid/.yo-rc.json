@@ -4,7 +4,12 @@
   ],
   "generator-kendo-ui-mobile": {
     "cleanup": [
-      "./home"
+      "./data/careBackend.js",
+      "./signInView",
+      "./registerView",
+      "./home",
+      "./calView",
+      "./addView"
     ]
   }
 }

@@ -5,15 +5,91 @@
   "views": [
     {
       "type": "view",
+      "name": "signInView",
+      "title": "Sign in",
+      "addToNavigation": true,
+      "components": [
+        {
+          "type": "signin",
+          "name": "signInViewModel",
+          "dataProvider": "careBackend",
+          "usernameLabel": "Username",
+          "passwordLabel": "Password",
+          "confirmLabel": "Sign In",
+          "signinRedirect": "home",
+          "navigateToSignup": true,
+          "signup": "registerView",
+          "registerLabel": "Register"
+        }
+      ],
+      "icon": "contacts"
+    },
+    {
+      "type": "view",
+      "name": "registerView",
+      "title": "Register",
+      "addToNavigation": true,
+      "components": [
+        {
+          "type": "signup",
+          "name": "registerViewModel",
+          "dataProvider": "careBackend",
+          "formLabel": "Register",
+          "emailLabel": "Email",
+          "usernameLabel": "Username",
+          "passwordLabel": "Password",
+          "registerLabel": "Register",
+          "registerRedirect": "home",
+          "navigateToSignin": true,
+          "signin": "signInView",
+          "signinLabel": "Sign In"
+        }
+      ],
+      "icon": "edit"
+    },
+    {
+      "type": "view",
       "name": "home",
       "title": "Home",
       "addToNavigation": true,
       "components": [],
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "name": "calView",
+      "title": "Calendar",
+      "addToNavigation": true,
+      "components": [],
+      "icon": "recents"
+    },
+    {
+      "type": "view",
+      "name": "addView",
+      "title": "Track",
+      "addToNavigation": true,
+      "components": [
+        {
+          "type": "form",
+          "name": "addViewModel",
+          "components": [],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "icon": "add"
     }
   ],
-  "view": "home",
+  "view": "signInView",
   "skin": "flat",
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "dataProvider",
+      "name": "careBackend",
+      "title": "care-nary / careBackend",
+      "source": "everlive",
+      "everliveKey": "TiQ179pLOVoq4iN1"
+    }
+  ],
   "transition": "slide"
 }
