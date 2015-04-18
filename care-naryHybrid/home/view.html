@@ -1,11 +1,17 @@
 <div data-role="view" data-title="Input" data-layout="main" data-model="app.models.home">
-    <center>
-    <a href="../foodView/view.html" data-role="button">Food</a><br>        
-    <a href="../medView/view.html" data-role="button">Medication</a><br>   
-    <a href="../actView/view.html" data-role="button">Activity</a><br>   
-    <a href="../sleepView/view.html" data-role="button">Sleep</a><br>   
-    <a href="../behavView/view.html" data-role="button">Behavior</a><br>   
-    </center>
+
+    <div class="input">
+        <p>What would you like to enter?</p>
+    </div>
+
+    <div class="input">
+        <a href="../foodView/view.html" data-role="button" class="inputButton">Food</a><br>        
+        <a href="../medView/view.html" data-role="button" class="inputButton">Medication</a><br>   
+        <a href="../actView/view.html" data-role="button" class="inputButton">Activity</a><br>   
+        <a href="../sleepView/view.html" data-role="button" class="inputButton">Sleep</a><br>   
+        <a href="../behavView/view.html" data-role="button" class="inputButton">Behavior</a><br>   
+        <div>
+
     <!--<div class="button-group">
                 
                         <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="FOOD">Food</a>
@@ -18,5 +24,5 @@
 
                         <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="BEHAVIOR">Behavior</a>
             data-bind="value: homeModel.model.input5"     
-       </div>-->   
-</div>
+        </div>-->   
+    </div>
