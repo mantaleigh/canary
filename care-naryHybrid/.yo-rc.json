@@ -1,0 +1,10 @@
+{
+  "dependsOn": [
+    "generator-kendo-ui-mobile@0.0.4"
+  ],
+  "generator-kendo-ui-mobile": {
+    "cleanup": [
+      "./home"
+    ]
+  }
+}

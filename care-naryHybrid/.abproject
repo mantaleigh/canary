@@ -5,7 +5,7 @@
   "AppIdentifier": "com.telerik.carenaryHybrid",
   "DisplayName": "care-naryHybrid",
   "Author": "",
-  "Description": "",
+  "Description": "care-naryHybrid",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [

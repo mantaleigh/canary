@@ -1,0 +1,52 @@
+#kendoUiMobileApp .image-with-text img {
+    float: left;
+    margin-right: 15px;
+}
+
+#kendoUiMobileApp .button-block,
+#kendoUiMobileApp .block {
+    display: block;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+#kendoUiMobileApp .button-submit {
+    background-color: #10c4b2;
+    color: white;
+}
+
+#kendoUiMobileApp .button-group {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 1em;
+}
+
+#kendoUiMobileApp .button-block {
+    display: table-cell;
+}
+
+#kendoUiMobileApp .group-separator {
+    border: none;
+    background: transparent;
+}
+
+#kendoUiMobileApp .group-separator-header {
+    margin: 1em 0;
+}
+
+#kendoUiMobileApp .app-icon {
+    text-align: center;
+    margin: 3em 0;
+}
+
+#kendoUiMobileApp .view-title {
+    text-align: center;
+    font-weight: normal;
+}
+
+#kendoUiMobileApp .km-drawer-button:after,
+#kendoUiMobileApp .km-drawer-button:before {
+    content: '\e077';
+}
