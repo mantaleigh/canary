@@ -1,0 +1,37 @@
+<div data-role="view" data-title="Input Food" data-layout="main-nonav" data-model="app.models.foodView">
+    <div id="foodViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Food
+                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Date/time
+                        <input data-bind="value: foodViewModel.model.datetime" type="datetime-local">
+                    </label>
+                </li>
+                <li>
+                    <label>Notes
+                        <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Food Group
+                        <input data-bind="value: foodViewModel.model.foodGroup" data-role="dropdownlist">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+
+                <a class="button button-block" data-role="button" data-bind="events: { click: foodViewModel.cancel }">Cancel</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: foodViewModel.submit }">Confirm</a>
+
+            </div>
+        </form>
+    </div>
+</div>

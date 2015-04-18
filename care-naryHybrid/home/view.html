@@ -1,17 +1,42 @@
-<div data-role="view" data-title="Home" data-layout="main" data-model="app.models.home">
+<div data-role="view" data-title="Input" data-layout="main" data-model="app.models.home">
+    <div id="homeModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Food
+                        <input data-bind="value: homeModel.model.input" type="radio" name="FOOD">
+                    </label>
+                </li>
+                <li>
+                    <label>Medication
+                        <input data-bind="value: homeModel.model.input2" type="radio" name="MEDICATION">
+                    </label>
+                </li>
+                <li>
+                    <label>Activity
+                        <input data-bind="value: homeModel.model.input3" type="radio" name="ACTIVITY">
+                    </label>
+                </li>
+                <li>
+                    <label>Sleep
+                        <input data-bind="value: homeModel.model.input4" type="radio" name="SLEEP">
+                    </label>
+                </li>
+                <li>
+                    <label>Behavior
+                        <input data-bind="value: homeModel.model.input5" type="radio" name="BEHAVIOR">
+                    </label>
+                </li>
+            </ul>
 
-    <h1>
-        Hello World! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    </h1>
-    <h2>
-        Hello again!
-    </h2>
+            <div class="button-group">
 
-      <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="home/view.html" data-icon="home">Home</a>
-                <a href="calView/view.html" data-icon="recents">Calendar</a>
-                <a href="addView/view.html" data-icon="add">Track</a>
+                <a class="button button-block" data-role="button" data-bind="events: { click: homeModel.cancel }">Cancel</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: homeModel.submit }">Confirm</a>
+
             </div>
-        </footer>
+        </form>
+    </div>
 </div>

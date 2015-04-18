@@ -1,0 +1,27 @@
+<div data-role="view" data-title="Input Behavior" data-layout="main-nonav" data-model="app.models.behavView">
+    <div id="behavViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Behavior
+                        <input data-bind="value: behavViewModel.model.behavType" placeholder="Behavior Name" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Notes
+                        <input data-bind="value: behavViewModel.model.behavNotes" placeholder="Notes" type="text">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+
+                <a class="button button-block" data-role="button" data-bind="events: { click: behavViewModel.cancel }">Cancel</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: behavViewModel.submit }">Confirm</a>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 'use strict';
 
-app.models.addView = (function() {
+app.models.actView = (function() {
     return {};
 })();
