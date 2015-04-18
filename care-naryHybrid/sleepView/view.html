@@ -3,13 +3,23 @@
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
-                    <label>Fell asleep
-                        <input data-bind="value: sleepViewModel.model.beginSleep" type="datetime-local">
+                    <label>Fell asleep (Time)
+                        <input data-bind="value: sleepViewModel.model.beginSleepTime" type="time">
+                    </label>
+                </li>
+                 <li>
+                    <label>Fell asleep (Date)
+                        <input data-bind="value: sleepViewModel.model.beginSleepDate" type="date">
                     </label>
                 </li>
                 <li>
-                    <label>Woke up
-                        <input data-bind="value: sleepViewModel.model.endSleep" type="datetime-local">
+                    <label>Woke up (Time)
+                        <input data-bind="value: sleepViewModel.model.endSleepTime" type="time">
+                    </label>
+                </li>
+                 <li>
+                    <label>Woke up (Date)
+                        <input data-bind="value: sleepViewModel.model.beginSleepDate" type="date">
                     </label>
                 </li>
             </ul>

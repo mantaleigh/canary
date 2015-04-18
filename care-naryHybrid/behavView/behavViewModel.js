@@ -3,7 +3,8 @@ app.models.behavView.behavViewModel = (function() {
         model: {
             behavType: undefined,
             behavNotes: undefined,
-            mdatetime: undefined,
+            behavDate: undefined,
+            behavTime: undefined,
         },
         submit: function() {}
     });

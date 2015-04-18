@@ -18,10 +18,15 @@
                     </label>
                 </li>
                 <li>
-                    <label>Date/time
-                        <input data-bind="value: foodViewModel.model.datetime" type="datetime-local">
-                    </label>
-                </li>
+                    <label>Date
+                        <input data-bind="value: foodViewModel.model.foodDate" type="date">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: foodViewModel.model.foodTime" type="time">
+                   </label>
+                 </li>
                 <li>
                     <label>Notes
                         <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text">

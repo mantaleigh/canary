@@ -13,10 +13,15 @@
                     </label>
                 </li>
                 <li>
-                    <label>Date/time
-                        <input data-bind="value: actViewModel.model.actdatetime" type="datetime-local">
-                    </label>
-                </li>
+                    <label>Date
+                        <input data-bind="value: actViewModel.model.actDate" type="date">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: actViewModel.model.actTime" type="time">
+                   </label>
+                 </li>
                 <li>
                     <label>Notes
                         <input data-bind="value: actViewModel.model.actNotes" placeholder="Notes" type="text">
