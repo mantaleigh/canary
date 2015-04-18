@@ -1,0 +1,40 @@
+{
+	"ProjectName": "care-nary",
+	"ProjectGuid": "{f240b7b2-1a75-4993-a5cc-a25e9fcb9eee}",
+	"projectVersion": 1,
+	"AppIdentifier": "com.telerik.carenary",
+	"DisplayName": "care-nary",
+	"Author": "",
+	"Description": "",
+	"BundleVersion": "1.0",
+	"AndroidVersionCode": "1",
+	"iOSDeviceFamily": [
+		"1",
+		"2"
+	],
+	"iOSBackgroundMode": [],
+	"ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+	"FrameworkVersion": "3.5.0",
+	"AndroidPermissions": [],
+	"DeviceOrientations": [
+		"Portrait",
+		"Landscape"
+	],
+	"AndroidHardwareAcceleration": "false",
+	"iOSStatusBarStyle": "Default",
+	"Framework": "Cordova",
+	"WP8TileTitle": "",
+	"WP8Publisher": "",
+	"WP8Capabilities": [],
+	"WP8Requirements": [],
+	"WP8PublisherID": "{cfb028b9-081e-4c5d-a3ff-93fcdbfd83a5}",
+	"WP8ProductID": "{f5c1be27-a4a7-4fd1-9a82-665bbd4d241b}",
+	"WPSdk": "8.0",
+	"WP8PackageIdentityName": "1234Telerik.com.telerik.carenary",
+	"WP8WindowsPublisherName": "CN=Telerik",
+	"WP8SupportedResolutions": [
+		"ID_RESOLUTION_WVGA",
+		"ID_RESOLUTION_WXGA",
+		"ID_RESOLUTION_HD720P"
+	]
+}
