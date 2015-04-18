@@ -3,9 +3,9 @@ app.models.behavView.behavViewModel = (function() {
         model: {
             behavType: undefined,
             behavNotes: undefined,
+            mdatetime: undefined,
         },
-        submit: function() {},
-        cancel: function() {}
+        submit: function() {}
     });
     return viewModel;
 })();
