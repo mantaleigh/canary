@@ -1,0 +1,8 @@
+{
+  "ProjectName": "care-naryHybridMobileTesting",
+  "ProjectGuid": "e1eb5659-3016-4027-83a8-709cdae00bee",
+  "projectVersion": 1,
+  "ProjectTypeGuids": "{6319b66f-8dff-4073-91be-3cd48a2fdeb3}",
+  "FrameworkVersion": "1.0",
+  "Framework": "MobileTesting"
+}
