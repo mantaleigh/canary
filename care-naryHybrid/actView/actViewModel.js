@@ -25,7 +25,20 @@ app.models.actView.actViewModel = (function() {
             // dateTime object
             var dateTime = new Date(actDate + " " + actTime);
             console.log(dateTime);
-
+            
+                                    
+            var el = new Everlive('TiQ179pLOVoq4iN1');
+            var user = app.user.principal_id;
+            var data = el.data('activites');
+            data.create({ '' : actName, '' : actType, '' : actNotes, '' : dateTime, '' : user},
+                function(data){
+                    //alert(JSON.stringify(data));
+                    console.log({});
+                },
+                function(error){
+                    alert(JSON.stringify(error));
+                });
+           
         }
     });
     return viewModel;
