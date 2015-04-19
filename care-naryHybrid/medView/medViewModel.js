@@ -7,8 +7,10 @@ app.models.medView.medViewModel = (function() {
             mtime: undefined,
             mnotes: undefined,
         },
-        submit: function() {},
-        cancel: function() {}
+        add: function() {
+
+            
+        }
     });
     return viewModel;
 })();
