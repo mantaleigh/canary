@@ -6,13 +6,18 @@
 
 	$(document).ready(function() { 
 
-		$('#calendar').fullCalendar({
+		var calendar = $('#calendar').fullCalendar({
 			aspectRatio: 1, 
 			header: {
 				left: 'today prev,next', 
 				center: 'title', 
 				right: 'month,basicWeek,basicDay'
 			},
+
+			dayClick: function(date, jsEvent, view) { 
+				calendar.fullCalendar('changeView', 'basicDay');
+				calendar.fullCalendar('gotoDate', date);
+			}
 
 		});
 
