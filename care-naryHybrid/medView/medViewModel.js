@@ -11,9 +11,11 @@ app.models.medView.medViewModel = (function() {
 
             var medName = $("#medNameInput").val();
             var medAmount = $("#medAmountInput").val();
-            var medDate = $("#medDateInput").val();
+            var oldMedDate = $("#medDateInput").val();
             var medTime = $("#medTimeInput").val();
             var medNotes = $("#medNotesInput").val();
+
+            var medDate = oldMedDate.split("-")[1] + "-" + oldMedDate.split("-")[2] + "-" + oldMedDate.split("-")[0]
 
             // dateTime object
             var dateTime = new Date(medDate + " " + medTime);

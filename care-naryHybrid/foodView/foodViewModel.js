@@ -17,19 +17,18 @@ app.models.foodView.foodViewModel = (function() {
             
             // dateTime object
             var dateTime = new Date(foodDate + " " + foodTime);
-                        
+            
             var el = new Everlive('TiQ179pLOVoq4iN1');
-            var user = app.user.principal_id;
             var data = el.data('Food');
-            data.create({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime, 'createdby' : user},
+            data.create({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime},
                 function(data){
                     //alert(JSON.stringify(data));
-                    console.log({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime,  'createdby' : user});
+                    console.log({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime});
                 },
                 function(error){
                     alert(JSON.stringify(error));
                 });
-            }
+        }
         });
         return viewModel;
 })();
