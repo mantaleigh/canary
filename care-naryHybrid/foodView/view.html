@@ -49,16 +49,16 @@ var foodSource = new kendo.data.DataSource({
 
 
     <div id="foodViewModel" class="form-view">
-        <form>
+        <form id="foodForm">
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
                     <label>Food
-                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text" required="true">
+                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text" required="true" id="foodNameInput">
                     </label>
                 </li>
                 <li>
                     <label>Food Group
-                        <select type="dropdown">
+                        <select type="dropdown" id="foodGroupInput">
                              <option value="dairy">Dairy</option>
                              <option value="meat">Meat</option>
                              <option value="grains">Grains</option>
@@ -67,17 +67,17 @@ var foodSource = new kendo.data.DataSource({
                 </li>
                 <li>
                     <label>Date
-                        <input data-bind="value: foodViewModel.model.foodDate" type="date" required="true">
+                        <input data-bind="value: foodViewModel.model.foodDate" type="date" required="true" id="foodDateInput">
                    </label>
                  </li>
                 <li>
                     <label>Time
-                        <input data-bind="value: foodViewModel.model.foodTime" type="time" required="true">
+                        <input data-bind="value: foodViewModel.model.foodTime" type="time" required="true" id="foodTimeInput">
                    </label>
                  </li>
                 <li>
                     <label>Notes
-                        <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text">
+                        <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text" id="foodNotesInput">
                     </label>
                 </li>
             </ul>
