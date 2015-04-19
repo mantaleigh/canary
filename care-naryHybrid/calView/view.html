@@ -21,6 +21,23 @@
 
 		});
 
+
+		// read in data from database
+		var el = new Everlive('TiQ179pLOVoq4iN1');
+		var data = el.data('Food');
+		data.get()
+		.then(function(data){
+			alert(JSON.stringify(data));
+			for (var i = 0; i < data.count; i++) { 
+				console.log(data.result[i]);
+			}
+
+			console.log(data.result);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
 	});
 	
 	</script>
