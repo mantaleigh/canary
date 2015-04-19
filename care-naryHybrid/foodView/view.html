@@ -33,10 +33,10 @@ var foodSource = new kendo.data.DataSource({
     foodSource.fetch(function(){
        var view = foodSource.view();
 
-        for (i = 0; i < view.length; i++) {
-              console.log(foodSource.at(i));
-              console.log(foodSource.at(i).Group);
-        }
+        // for (i = 0; i < view.length; i++) {
+        //       console.log(foodSource.at(i));
+        //       console.log(foodSource.at(i).Group);
+        // }
        
       
     });
@@ -53,26 +53,26 @@ var foodSource = new kendo.data.DataSource({
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
                     <label>Food
-                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text">
+                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text" required="true">
                     </label>
                 </li>
                 <li>
                     <label>Food Group
                         <select type="dropdown">
-                             <option value="1">Dairy</option>
-                             <option value="2">Meat</option>
-                             <option value="3">Grains</option>
+                             <option value="dairy">Dairy</option>
+                             <option value="meat">Meat</option>
+                             <option value="grains">Grains</option>
                         </select>
                     </label>
                 </li>
                 <li>
                     <label>Date
-                        <input data-bind="value: foodViewModel.model.foodDate" type="date">
+                        <input data-bind="value: foodViewModel.model.foodDate" type="date" required="true">
                    </label>
                  </li>
                 <li>
                     <label>Time
-                        <input data-bind="value: foodViewModel.model.foodTime" type="time">
+                        <input data-bind="value: foodViewModel.model.foodTime" type="time" required="true">
                    </label>
                  </li>
                 <li>
@@ -87,7 +87,7 @@ var foodSource = new kendo.data.DataSource({
                 <a class="button button-block" data-role="button" href="../home/view.html">Back</a>
 
 
-                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: foodViewModel.submit }">Add to Calendar</a>
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: foodViewModel.add }">Add to Calendar</a>
 
             </div>
         </form>

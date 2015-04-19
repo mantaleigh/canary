@@ -3,23 +3,23 @@
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
-                    <label>Medication Type
-                        <input data-bind="value: medViewModel.model.medication" placeholder="Medication" type="text">
+                    <label>Medication Name
+                        <input data-bind="value: medViewModel.model.medication" placeholder="Medication" type="text" required="true">
                     </label>
                 </li>
                 <li>
                     <label>Medication Amount
-                        <input data-bind="value: medViewModel.model.mAmount" placeholder="Amount" type="text">
+                        <input data-bind="value: medViewModel.model.mAmount" placeholder="Amount" type="text" required="true">
                     </label>
                 </li>
                 <li>
                     <label>Date
-                        <input data-bind="value: medViewModel.model.mDate" type="date">
+                        <input data-bind="value: medViewModel.model.mDate" type="date" required="true">
                    </label>
                  </li>
                 <li>
                     <label>Time
-                        <input data-bind="value: medViewModel.model.mTime" type="time">
+                        <input data-bind="value: medViewModel.model.mTime" type="time" required="true">
                    </label>
                  </li>
                 <li>

@@ -4,7 +4,7 @@
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
                     <label>Activity Name
-                        <input data-bind="value: actViewModel.model.activity" placeholder="Activity" type="text">
+                        <input data-bind="value: actViewModel.model.activity" placeholder="Activity" type="text" required="true">
                     </label>
                 </li>
                  <li>
@@ -18,12 +18,12 @@
                 </li>
                 <li>
                     <label>Date
-                        <input data-bind="value: actViewModel.model.actDate" type="date">
+                        <input data-bind="value: actViewModel.model.actDate" type="date" required="true">
                    </label>
                  </li>
                 <li>
                     <label>Time
-                        <input data-bind="value: actViewModel.model.actTime" type="time">
+                        <input data-bind="value: actViewModel.model.actTime" type="time" required="true">
                    </label>
                  </li>
                 <li>

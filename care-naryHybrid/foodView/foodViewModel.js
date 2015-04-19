@@ -7,8 +7,11 @@ app.models.foodView.foodViewModel = (function() {
             notes: undefined,
             foodGroup: undefined,
         },
-        submit: function() {},
-        cancel: function() {}
+        add: function() {
+
+            console.log("add to calendar was clicked");
+
+        }
     });
     return viewModel;
 })();
