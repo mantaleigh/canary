@@ -23,8 +23,6 @@
 
 
 		var allDayBoolean = false;
-		var foodColor = 'red';
-		//var 
 
 
 		// ----read in data from Food database-----
@@ -33,10 +31,20 @@
 		foodData.get()
 		.then(function(foodData){
 			//alert(JSON.stringify(data));
+			console.log(foodData.count);
+			console.log(foodData.result);
 			var foodTitle = "";
 			var foodStartTime = "";
 			var foodEndTime = "";
+
+			var allFoodEvents =	{
+				    events: [],
+				    color: 'red',   // an option!
+				    textColor: 'black' // an option!
+				}
+
 			for (var i = 0; i < foodData.count; i++) { 
+				console.log(i);
 				foodTitle = "Food: " + foodData.result[i].food_name;
 				foodStartTime = foodData.result[i].time;
 				foodEndTime = new Date(foodStartTime.getTime() + 15*60000);
@@ -49,13 +57,14 @@
 					allDay: allDayBoolean,
 					start: foodStartTime,
 					end: foodEndTime,
-					color: foodColor
-				};
+				}
 
-			calendar.fullCalendar('renderEvent', foodEvent, 'stick');
+				 allFoodEvents.events.push(foodEvent);
+
+				//calendar.fullCalendar('renderEvent', foodEvent, 'stick');
 		    } // close loop
-
-			//console.log(foodData.result);
+		    calendar.fullCalendar('addEventSource', allFoodEvents);
+			//console.log(foodData);
 		},
 		function(error){
 			alert(JSON.stringify(error));
@@ -63,37 +72,37 @@
 
 
 		//------- read in data from Medications database -------
-		var medData = el.data('Medications');
-		medData.get()
-		.then(function(medData){
-			alert(JSON.stringify(medData));
-			// var foodTitle = "";
-			// var foodStartTime = "";
-			// var foodEndTime = "";
-			// for (var i = 0; i < foodData.count; i++) { 
-			// 	foodTitle = "Food: " + foodData.result[i].food_name;
-			// 	foodStartTime = foodData.result[i].time;
-			// 	foodEndTime = new Date(foodStartTime.getTime() + 15*60000);
-			// 	console.log(foodStartTime);
-			// 	console.log(foodEndTime);
-			// 	console.log(foodTitle);
+		// var medData = el.data('Medication');
+		// medData.get()
+		// .then(function(medData){
+		// 	//alert(JSON.stringify(medData));
+		// 	var medTitle = "";
+		// 	var medStartTime = "";
+		// 	var medEndTime = "";
+		// 	for (var i = 0; i < medData.count; i++) { 
+		// 	 	medTitle = "MED: " + medData.result[i].name_of_med;
+		// 	 	medStartTime = medData.result[i].time;
+		// 	 	medEndTime = new Date(foodStartTime.getTime() + 15*60000);
+		// 	 	console.log(medStartTime);
+		// 	 	console.log(medEndTime);
+		// 	 	console.log(medTitle);
 
-				// var foodEvent = {
-				// 	title: foodTitle,
-				// 	allDay: allDayBoolean,
-				// 	start: foodStartTime,
-				// 	end: foodEndTime,
-				// 	color: foodColor
-				// };
+		// 		var medEvent = {
+		// 		 	title: medTitle,
+		// 		 	allDay: allDayBoolean,
+		// 		 	start: medStartTime,
+		// 		 	end: medEndTime,
+		// 		 	color: medColor
+		// 		 };
 
-			// calendar.fullCalendar('renderEvent', foodEvent, 'stick');
-		 // } // close loop
+		// 	 calendar.fullCalendar('renderEvent', medEvent, 'stick');
+		//     } // close loop
 
-			//console.log(medData.result);
-		},
-		function(error){
-			alert(JSON.stringify(error));
-		});
+		// 	console.log(medData.result);
+		// },
+		// function(error){
+		// 	alert(JSON.stringify(error));
+		// });
 
 	});
 	
