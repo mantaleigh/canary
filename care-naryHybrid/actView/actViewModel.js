@@ -4,7 +4,8 @@ app.models.actView.actViewModel = (function() {
             actType: undefined,
             activity: undefined,
             actDate: undefined,
-            actTime: undefined,
+            actStartTime: undefined,
+            actEndTime: undefined,
             actNotes: undefined,
         },
         add: function() {
@@ -17,12 +18,6 @@ app.models.actView.actViewModel = (function() {
             var actNotes = $("#actNotesInput").val();
 
             var actDate = oldActDate.split("-")[1] + "-" + oldActDate.split("-")[2] + "-" + oldActDate.split("-")[0]
-            console.log(actName); 
-            console.log(actType);
-            console.log(actDate);
-            console.log(actTime);
-            console.log(actNotes);
-
             // dateTime objects
             var startDateTime = new Date(actDate + " " + actStartTime);
             console.log(startDateTime);
@@ -31,9 +26,9 @@ app.models.actView.actViewModel = (function() {
             
                                     
             var el = new Everlive('TiQ179pLOVoq4iN1');
-            var user = app.user.principal_id;
-            var data = el.data('activites');
-            data.create({ '' : actName, '' : actType, '' : actNotes, '' : dateTime, '' : user},
+
+            var data = el.data('act');
+            data.create({'activity' : actName, 'aType' : actType, 'aNotes' : actNotes, 'start_time' : startDateTime, 'end_time' : endDateTime},
                 function(data){
                     //alert(JSON.stringify(data));
                     console.log({});

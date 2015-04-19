@@ -36,6 +36,6 @@ app.models.foodView.foodViewModel = (function() {
         $("#foodNotesInput").val("");
 
         }
-        });
+          });
         return viewModel;
 })();
