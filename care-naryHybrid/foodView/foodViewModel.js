@@ -11,20 +11,18 @@ app.models.foodView.foodViewModel = (function() {
 
             var foodName = $("#foodNameInput").val();
             var foodGroup = $("#foodGroupInput").val();
-            var foodDate = $("#foodDateInput").val();
+            var oldFoodDate = $("#foodDateInput").val();
             var foodTime = $("#foodTimeInput").val();
             var foodNotes = $("#foodNotesInput").val();
-<<<<<<< HEAD
-
             console.log(foodDate);
+
+            var foodDate = oldFoodDate.split("-")[1] + "-" + oldFoodDate.split("-")[2] + "-" + oldFoodDate.split("-")[0]
+            console.log(foodDate);
+
             // dateTime object
             var dateTime = new Date(foodDate + " " + foodTime);
             console.log(dateTime);
 
-=======
-            
-            // dateTime object
-            var dateTime = new Date(foodDate + " " + foodTime);
             
             var el = new Everlive('TiQ179pLOVoq4iN1');
             var data = el.data('Food');
@@ -36,7 +34,6 @@ app.models.foodView.foodViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
->>>>>>> 1807392ba861fbbbc9d10af88a6021eb6abaa5a4
         }
         });
         return viewModel;

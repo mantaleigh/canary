@@ -9,10 +9,12 @@ app.models.sleepView.sleepViewModel = (function() {
         add: function() {
 
             var awakeTime = $("#awakeTime").val();
-            var awakeDate = $("#awakeDate").val();
+            var oldAwakeDate = $("#awakeDate").val();
             var asleepTime = $("#asleepTime").val();
             var asleepDate = $("#asleepDate").val();
 
+            var awakeDate = oldAwakeDate.split("-")[1] + "-" + oldAwakeDate.split("-")[2] + "-" + oldAwakeDate.split("-")[0]
+            
             // dateTime object
             var awakeDateTime = new Date(awakeDate + " " + awakeTime);
             var asleepDateTime = new Date(asleepDate + " " + awakeTime);

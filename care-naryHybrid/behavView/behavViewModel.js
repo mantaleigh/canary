@@ -9,9 +9,11 @@ app.models.behavView.behavViewModel = (function() {
         add: function() {
 
             var behavMood = $("#behavMoodInput").val();
-            var behavMoodDate = $("#behavMoodDate").val();
+            var oldBehavMoodDate = $("#behavMoodDate").val();
             var behavMoodTime = $("#behavMoodTime").val();
             var behavMoodNotes = $("#behavMoodNotes").val();
+
+            var behavMoodDate = oldBehavMoodDate.split("-")[1] + "-" + oldBehavMoodDate.split("-")[2] + "-" + oldBehavMoodDate.split("-")[0]
 
             console.log(behavMood);
             console.log(behavMoodDate);
