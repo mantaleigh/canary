@@ -22,15 +22,39 @@
 		});
 
 
-		// read in data from database
+		var allDayBoolean = false;
+		var foodColor = 'red';
+		//var 
+
+
+		// ----read in data from Food database-----
 		var el = new Everlive('TiQ179pLOVoq4iN1');
 		var data = el.data('Food');
 		data.get()
 		.then(function(data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
+			var foodTitle = "";
+			var foodStartTime = "";
+			var foodEndTime = "";
 			for (var i = 0; i < data.count; i++) { 
-				console.log(data.result[i]);
-			}
+				foodTitle = "Food: " + data.result[i].food_name;
+				foodStartTime = data.result[i].time;
+				foodEndTime = new Date(foodStartTime.getTime() + 15*60000);
+				console.log(foodStartTime);
+				console.log(foodEndTime);
+				console.log(foodTitle);
+
+			var foodEvent = {
+				title: foodTitle,
+				allDay: allDayBoolean,
+				start: foodStartTime,
+				end: foodEndTime,
+				color: foodColor
+			};
+
+			calendar.fullCalendar('renderEvent', foodEvent, 'stick');
+		}
+
 
 			console.log(data.result);
 		},
