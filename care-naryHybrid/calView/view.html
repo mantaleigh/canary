@@ -200,48 +200,48 @@
 			alert(JSON.stringify(error));
 		});
 
-		// // ----read in data from sleep database-----
-		// var sleepData = el.data('sleep');
-		// sleepData.get()
-		// .then(function(sleepData){
-		// 	//alert(JSON.stringify(data));
-		// 	console.log(sleepData.count);
-		// 	console.log(sleepData.result);
-		//  	var sleepTitle = "";
-		//  	var sleepStartTime = "";
-		//  	var sleepEndTime = "";
+		// ----read in data from sleep database-----
+		var sleepData = el.data('sleep');
+		sleepData.get()
+		.then(function(sleepData){
+			//alert(JSON.stringify(data));
+			console.log(sleepData.count);
+			console.log(sleepData.result);
+		 	var sleepTitle = "";
+		 	var sleepStartTime = "";
+		 	var sleepEndTime = "";
 
-		// 	var allSleepEvents =	{
-		// 		    events: [],
-		// 		    color: 'blue',   // an option!
-		// 		    textColor: 'black' // an option!
-		// 		}
+			var allSleepEvents =  {
+				    events: [],
+				    color: 'blue',   // an option!
+				    textColor: 'black' // an option!
+				}
 
-		// 	for (var i = 0; i < sleepData.count; i++) { 
-		// 		console.log(i);
-		// //  	 	sleepTitle = "BEHA/MOOD: " + sleepData.result[i].bem;
-		// //  	 	sleepStartTime = sleepData.result[i].bemTime;
-		// //  	 	sleepEndTime = new Date(sleepStartTime.getTime() + 15*60000);
-		// //  		console.log(sleepStartTime);
-		// //  	 	console.log(sleepEndTime);
-		// //  	 	console.log(sleepTitle);
+		 	for (var i = 0; i < sleepData.count; i++) { 
+		 		console.log(i);
+		  	 	sleepTitle = "SLEEP";
+		  	 	sleepStartTime = sleepData.result[i].start_time;
+		  	 	sleepEndTime = sleepData.result[i].end_time;
+		  		console.log(sleepStartTime);
+		  	 	console.log(sleepEndTime);
+		  	 	console.log(sleepTitle);
 
-		// // 		var sleepEvent = {
-		// // 			title: sleepTitle,
-		// // 			allDay: allDayBoolean,
-		// // 			start: sleepStartTime,
-		// // 			end: sleepEndTime,
-		// // 		}
+				var sleepEvent = {
+					title: sleepTitle,
+					allDay: allDayBoolean,
+					start: sleepStartTime,
+					end: sleepEndTime,
+				}
 
-		// //  		 allSleepEvents.events.push(sleepEvent);
+		  		 allSleepEvents.events.push(sleepEvent);
 
-		//        } // close loop
-		// //        calendar.fullCalendar('addEventSource', allSleepEvents);
-		// // // 	console.log(allSleepEvents);
-		// },
-		// function(error){
-		// 	alert(JSON.stringify(error));
-		// });
+		    } // close loop
+		       calendar.fullCalendar('addEventSource', allSleepEvents);
+		// 	console.log(allSleepEvents);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
 
 
 
