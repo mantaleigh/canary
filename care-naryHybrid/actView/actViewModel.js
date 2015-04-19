@@ -36,6 +36,14 @@ app.models.actView.actViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
+            
+            alert("Data successfully entered.")
+            $("#actNameInput").val("");
+            $("#actTypeInput").val("");
+            $("#actDateInput").val("");
+            $("#actStartTimeInput").val("");
+            $("#actEndTimeInput").val("");
+            $("#actNotesInput").val("");
            
         }
     });

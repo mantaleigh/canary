@@ -33,11 +33,11 @@ app.models.medView.medViewModel = (function() {
                 });
             
             alert("Data successfully entered.")
-            $("#").val("");
-            $("#").val("");
-            $("#").val("");
-            $("#").val("");
-            $("#").val("");
+            $("#medNotesInput").val("");
+            $("#medTimeInput").val("");
+            $("#medDateInput").val("");
+            $("#medAmountInput").val("");
+            $("#medNameInput").val("");
         }
     });
     return viewModel;
