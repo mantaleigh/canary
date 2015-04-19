@@ -11,11 +11,11 @@
 			header: {
 				left: 'today prev,next', 
 				center: 'title', 
-				right: 'month,basicWeek,basicDay'
+				right: 'month,agendaWeek,agendaDay'
 			},
 
 			dayClick: function(date, jsEvent, view) { 
-				calendar.fullCalendar('changeView', 'basicDay');
+				calendar.fullCalendar('changeView', 'agendaDay');
 				calendar.fullCalendar('gotoDate', date);
 			}
 
@@ -61,7 +61,6 @@
 
 				 allFoodEvents.events.push(foodEvent);
 
-				//calendar.fullCalendar('renderEvent', foodEvent, 'stick');
 		    } // close loop
 		    calendar.fullCalendar('addEventSource', allFoodEvents);
 			//console.log(foodData);
@@ -71,38 +70,51 @@
 		});
 
 
-		//------- read in data from Medications database -------
-		// var medData = el.data('Medication');
-		// medData.get()
-		// .then(function(medData){
-		// 	//alert(JSON.stringify(medData));
-		// 	var medTitle = "";
-		// 	var medStartTime = "";
-		// 	var medEndTime = "";
-		// 	for (var i = 0; i < medData.count; i++) { 
-		// 	 	medTitle = "MED: " + medData.result[i].name_of_med;
-		// 	 	medStartTime = medData.result[i].time;
-		// 	 	medEndTime = new Date(foodStartTime.getTime() + 15*60000);
-		// 	 	console.log(medStartTime);
-		// 	 	console.log(medEndTime);
-		// 	 	console.log(medTitle);
+		// ----read in data from Medication database-----
+		var el = new Everlive('TiQ179pLOVoq4iN1');
+		var medData = el.data('Medication');
+		medData.get()
+		.then(function(medData){
+			//alert(JSON.stringify(data));
+			console.log(medData.count);
+			console.log(medData.result);
+			var medTitle = "";
+			var medStartTime = "";
+			var medEndTime = "";
 
-		// 		var medEvent = {
-		// 		 	title: medTitle,
-		// 		 	allDay: allDayBoolean,
-		// 		 	start: medStartTime,
-		// 		 	end: medEndTime,
-		// 		 	color: medColor
-		// 		 };
+			var allMedEvents =	{
+				    events: [],
+				    color: 'orange',   // an option!
+				    textColor: 'black' // an option!
+				}
 
-		// 	 calendar.fullCalendar('renderEvent', medEvent, 'stick');
-		//     } // close loop
+			for (var i = 0; i < medData.count; i++) { 
+				console.log(i);
+				medTitle = "MED: " + medData.result[i].name_of_med;
+				medStartTime = medData.result[i].time;
+				medEndTime = new Date(medStartTime.getTime() + 15*60000);
+				console.log(medStartTime);
+				console.log(medEndTime);
+				console.log(medTitle);
 
-		// 	console.log(medData.result);
-		// },
-		// function(error){
-		// 	alert(JSON.stringify(error));
-		// });
+				var medEvent = {
+					title: medTitle,
+					allDay: allDayBoolean,
+					start: medStartTime,
+					end: medEndTime,
+				}
+
+				 allMedEvents.events.push(medEvent);
+
+		    } // close loop
+		    calendar.fullCalendar('addEventSource', allMedEvents);
+			//console.log(medData);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+
 
 	});
 	
