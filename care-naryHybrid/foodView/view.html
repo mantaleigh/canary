@@ -1,0 +1,107 @@
+<div data-role="view" id="food" data-title="Input Food" data-layout="main-nonav" data-model="app.models.foodView">
+
+<script>
+ console.log("Food Screen JS");
+
+$(document).ready(function() { 
+var foodSource = new kendo.data.DataSource({
+      type: "everlive",
+      transport: {
+        typeName: "Food"
+
+      },
+      schema: {
+        model: {
+          id: "Id",
+          fields: {
+            // default fields for Backend Services types
+            CreatedBy:  { type: "string" },
+            CreatedAt:  { type: "date" },
+            ModifiedAt: { type: "date" },
+
+            // type fields
+            Group:    { type: "string" }
+          }
+        }
+      }
+
+    });
+    
+
+
+    console.log(foodSource);
+    foodSource.fetch(function(){
+       var view = foodSource.view();
+
+        // for (i = 0; i < view.length; i++) {
+        //       console.log(foodSource.at(i));
+        //       console.log(foodSource.at(i).Group);
+        // }
+       
+      
+    });
+
+   });
+
+
+ console.log("END Food Screen JS");
+</script>
+
+
+    <div id="foodViewModel" class="form-view">
+        <form id="foodForm">
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Food
+                        <input data-bind="value: foodViewModel.model.food" placeholder="Enter a food" type="text" required="true" id="foodNameInput">
+                    </label>
+                </li>
+                <li>
+                    <label>Food Group
+                        <select type="dropdown" id="foodGroupInput">
+                             <option value="dairy">Dairy</option>
+                             <option value="meat">Meat</option>
+                             <option value="grains">Grains</option>
+                             <option value="vegetables">Vegetables</option>
+                             <option value="fruit">Fruit</option>
+                             <option value="Gluten">Gluten</option>
+                             <option value="nuts">Nuts</option>
+                             <option value="fish">fish</option>
+                        </select>
+                    </label>
+                </li>
+                <li>
+                    <label>Date
+                        <input data-bind="value: foodViewModel.model.foodDate" type="date" required="true" id="foodDateInput">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: foodViewModel.model.foodTime" type="time" required="true" id="foodTimeInput">
+                   </label>
+                 </li>
+                <li>
+                    <label>Notes
+                        <input data-bind="value: foodViewModel.model.notes" placeholder="Notes" type="text" id="foodNotesInput">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+
+                <a class="button button-block" data-role="button" href="../home/view.html">Back</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: foodViewModel.add }">Add to Calendar</a>
+
+            </div>
+        </form>
+    </div>
+
+            <footer data-role="footer">
+            <div data-role="tabstrip" id="navigation-container">
+                <a href="home/view.html" data-icon="add">Input</a>
+                <a href="calView/view.html" data-icon="recents">Calendar</a>
+            </div>
+        </footer>
+</div>

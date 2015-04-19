@@ -1,0 +1,44 @@
+<div data-role="view" data-title="Input Sleep" data-layout="main-nonav" data-model="app.models.sleepView">
+    <div id="sleepViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Fell asleep (Time)
+                        <input data-bind="value: sleepViewModel.model.beginSleepTime" type="time" required="true" id="asleepTime">
+                    </label>
+                </li>
+                 <li>
+                    <label>Fell asleep (Date)
+                        <input data-bind="value: sleepViewModel.model.beginSleepDate" type="date" required="true" id="asleepDate">
+                    </label>
+                </li>
+                <li>
+                    <label>Woke up (Time)
+                        <input data-bind="value: sleepViewModel.model.endSleepTime" type="time" required="true" id="awakeTime">
+                    </label>
+                </li>
+                 <li>
+                    <label>Woke up (Date)
+                        <input data-bind="value: sleepViewModel.model.endSleepDate" type="date" required="true" id="awakeDate">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+
+                <a class="button button-block" data-role="button" href="../home/view.html">Back</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: sleepViewModel.add }">Add to Calendar</a>
+
+            </div>
+        </form>
+    </div>
+
+    <footer data-role="footer">
+        <div data-role="tabstrip" id="navigation-container">
+            <a href="home/view.html" data-icon="add">Input</a>
+            <a href="calView/view.html" data-icon="recents">Calendar</a>
+        </div>
+    </footer>
+</div>

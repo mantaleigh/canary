@@ -1,0 +1,44 @@
+<div data-role="view" data-title="Input Behavior/Mood" data-layout="main-nonav" data-model="app.models.behavView">
+    <div id="behavViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Behavior/Mood
+                        <input data-bind="value: behavViewModel.model.behavType" placeholder="Behavior/Mood" type="text" required="true" id="behavMoodInput">
+                    </label>
+                </li>
+                <li>
+                    <label>Date
+                        <input data-bind="value: behavViewModel.model.behavDate" type="date" required="true" id="behavMoodDate">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: behavViewModel.model.behavTime" type="time" required="true" id="behavMoodTime">
+                   </label>
+                 </li>
+                <li>
+                    <label>Notes
+                        <input data-bind="value: behavViewModel.model.behavNotes" placeholder="Notes" type="text" id="behavMoodNotes">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+
+                <a class="button button-block" data-role="button" href="../home/view.html">Back</a>
+
+
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: behavViewModel.add }">Add to Calendar</a>
+
+            </div>
+        </form>
+    </div>
+
+    <footer data-role="footer">
+        <div data-role="tabstrip" id="navigation-container">
+            <a href="home/view.html" data-icon="add">Input</a>
+            <a href="calView/view.html" data-icon="recents">Calendar</a>
+        </div>
+    </footer>
+</div>

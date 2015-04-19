@@ -9,7 +9,11 @@
       "./registerView",
       "./home",
       "./calView",
-      "./addView"
+      "./foodView",
+      "./medView",
+      "./actView",
+      "./sleepView",
+      "./behavView"
     ]
   }
 }

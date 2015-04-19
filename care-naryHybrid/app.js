@@ -1,11 +1,19 @@
 (function() {
-
+    var apiKey = "TiQ179pLOVoq4iN1";
+    var el = new Everlive(apiKey);
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app = {
         models: {},
         data: {}
     };
+    
+    var foodDataSource = new kendo.data.DataSource({
+      type: "everlive",
+      transport: {
+          typeName: "Food"
+      }
+    });
 
     var bootstrap = function() {
         $(function() {
@@ -22,7 +30,12 @@
                 initial: 'signInView/view.html',
 
                 statusBarStyle: "black-translucent"
+            
             });
+        });
+        $("#food-list").kendoMobileListView({
+          dataSource: foodDataSource,
+          template: "#: Group #"
         });
     };
 
@@ -40,6 +53,9 @@
     } else {
         bootstrap();
     }
+
+
+  
 
     window.app = app;
 }());

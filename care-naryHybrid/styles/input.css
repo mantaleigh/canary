@@ -1,0 +1,13 @@
+.inputButton { 
+
+	display:block;
+	width:90%;
+	margin: auto;
+	text-transform: uppercase;
+
+} 
+
+div.input { 
+   padding-top:5%;
+   text-align:center;
+} 

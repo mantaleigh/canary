@@ -1,17 +1,29 @@
-<div data-role="view" data-title="Home" data-layout="main" data-model="app.models.home">
+<div data-role="view" data-title="Input" data-layout="main" data-model="app.models.home">
 
-    <h1>
-        Hello World! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    </h1>
-    <h2>
-        Hello again!
-    </h2>
+    <div class="input">
+        <p>What would you like to enter?</p>
+    </div>
 
-      <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="home/view.html" data-icon="home">Home</a>
-                <a href="calView/view.html" data-icon="recents">Calendar</a>
-                <a href="addView/view.html" data-icon="add">Track</a>
-            </div>
-        </footer>
+    <div class="input">
+        <a href="../foodView/view.html" data-role="button" class="inputButton">Food</a><br>        
+        <a href="../medView/view.html" data-role="button" class="inputButton">Medication</a><br>   
+        <a href="../actView/view.html" data-role="button" class="inputButton">Activity</a><br>   
+        <a href="../sleepView/view.html" data-role="button" class="inputButton">Sleep</a><br>   
+        <a href="../behavView/view.html" data-role="button" class="inputButton">Behavior/Mood</a><br>   
+      
+    <!--<div class="button-group">
+                
+                        <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="FOOD">Food</a>
+
+                        <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="MEDICATION">Medication</a>
+
+                        <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="ACTIVITY">Activity</a>
+
+                        <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="SLEEP">Sleep</a>
+
+                        <a class="button button-list" data-role="button" data-bind="foodView/view.html" name="BEHAVIOR">Behavior</a>
+            data-bind="value: homeModel.model.input5"     
+        </div>-->   
+    </div>
+    
 </div>

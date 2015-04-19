@@ -7,7 +7,7 @@
       "type": "view",
       "name": "signInView",
       "title": "Sign in",
-      "addToNavigation": true,
+      "addToNavigation": false,
       "components": [
         {
           "type": "signin",
@@ -21,14 +21,13 @@
           "signup": "registerView",
           "registerLabel": "Register"
         }
-      ],
-      "icon": "contacts"
+      ]
     },
     {
       "type": "view",
       "name": "registerView",
       "title": "Register",
-      "addToNavigation": true,
+      "addToNavigation": false,
       "components": [
         {
           "type": "signup",
@@ -44,16 +43,59 @@
           "signin": "signInView",
           "signinLabel": "Sign In"
         }
-      ],
-      "icon": "edit"
+      ]
     },
     {
       "type": "view",
       "name": "home",
-      "title": "Home",
+      "title": "Input",
       "addToNavigation": true,
-      "components": [],
-      "icon": "home"
+      "components": [
+        {
+          "type": "form",
+          "name": "homeModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "input",
+              "title": "Food",
+              "inputType": "radio",
+              "group": "FOOD"
+            },
+            {
+              "type": "field",
+              "name": "input2",
+              "title": "Medication",
+              "inputType": "radio",
+              "group": "MEDICATION"
+            },
+            {
+              "type": "field",
+              "name": "input3",
+              "title": "Activity",
+              "inputType": "radio",
+              "group": "ACTIVITY"
+            },
+            {
+              "type": "field",
+              "name": "input4",
+              "title": "Sleep",
+              "inputType": "radio",
+              "group": "SLEEP"
+            },
+            {
+              "type": "field",
+              "name": "input5",
+              "title": "Behavior",
+              "inputType": "radio",
+              "group": "BEHAVIOR"
+            }
+          ],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "icon": "add"
     },
     {
       "type": "view",
@@ -65,19 +107,188 @@
     },
     {
       "type": "view",
-      "name": "addView",
-      "title": "Track",
-      "addToNavigation": true,
+      "name": "foodView",
+      "title": "Input Food",
+      "addToNavigation": false,
       "components": [
         {
           "type": "form",
-          "name": "addViewModel",
-          "components": [],
+          "name": "foodViewModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "food",
+              "title": "Food",
+              "inputType": "text",
+              "placeholder": "Enter a food"
+            },
+            {
+              "type": "field",
+              "name": "datetime",
+              "title": "Date/time",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "field",
+              "name": "notes",
+              "title": "Notes",
+              "inputType": "text",
+              "placeholder": "Notes"
+            },
+            {
+              "type": "field",
+              "name": "foodGroup",
+              "title": "Food Group",
+              "inputType": "dropdownlist"
+            }
+          ],
           "submitButton": "Confirm",
           "cancelButton": "Cancel"
         }
-      ],
-      "icon": "add"
+      ]
+    },
+    {
+      "type": "view",
+      "name": "medView",
+      "title": "Input Medication",
+      "addToNavigation": false,
+      "components": [
+        {
+          "type": "form",
+          "name": "medViewModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "medication",
+              "title": "Medication Type",
+              "inputType": "text",
+              "placeholder": "Medication"
+            },
+            {
+              "type": "field",
+              "name": "mAmount",
+              "title": "Medication Amount",
+              "inputType": "text",
+              "placeholder": "Amount"
+            },
+            {
+              "type": "field",
+              "name": "mdatetime",
+              "title": "Date/time",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "field",
+              "name": "mnotes",
+              "title": "Notes",
+              "inputType": "text",
+              "placeholder": "Notes"
+            }
+          ],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ]
+    },
+    {
+      "type": "view",
+      "name": "actView",
+      "title": "Input Activity",
+      "addToNavigation": false,
+      "components": [
+        {
+          "type": "form",
+          "name": "actViewModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "actType",
+              "title": "Activity Type",
+              "inputType": "dropdownlist"
+            },
+            {
+              "type": "field",
+              "name": "activity",
+              "title": "Activity Name",
+              "inputType": "text",
+              "placeholder": "Activity"
+            },
+            {
+              "type": "field",
+              "name": "actdatetime",
+              "title": "Date/time",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "field",
+              "name": "actNotes",
+              "title": "Notes",
+              "inputType": "text",
+              "placeholder": "Notes"
+            }
+          ],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ]
+    },
+    {
+      "type": "view",
+      "name": "sleepView",
+      "title": "Input Sleep",
+      "addToNavigation": false,
+      "components": [
+        {
+          "type": "form",
+          "name": "sleepViewModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "beginSleep",
+              "title": "Fell asleep",
+              "inputType": "datetime-local"
+            },
+            {
+              "type": "field",
+              "name": "endSleep",
+              "title": "Woke up",
+              "inputType": "datetime-local"
+            }
+          ],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ]
+    },
+    {
+      "type": "view",
+      "name": "behavView",
+      "title": "Input Behavior",
+      "addToNavigation": false,
+      "components": [
+        {
+          "type": "form",
+          "name": "behavViewModel",
+          "components": [
+            {
+              "type": "field",
+              "name": "behavType",
+              "title": "Behavior",
+              "inputType": "text",
+              "placeholder": "Behavior Name"
+            },
+            {
+              "type": "field",
+              "name": "behavNotes",
+              "title": "Notes",
+              "inputType": "text",
+              "placeholder": "Notes"
+            }
+          ],
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ]
     }
   ],
   "view": "signInView",
