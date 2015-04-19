@@ -118,8 +118,8 @@
 		actData.get()
 		.then(function(actData){
 			//alert(JSON.stringify(data));
-			console.log(actData.count);
-			console.log(actData.result);
+			// console.log(actData.count);
+			// console.log(actData.result);
 			var actTitle = "";
 			var actStartTime = "";
 			var actEndTime = "";
@@ -131,13 +131,13 @@
 				}
 
 			for (var i = 0; i < actData.count; i++) { 
-				console.log(i);
+				// console.log(i);
 				actTitle = "ACT: " + actData.result[i].activity;
 				actStartTime = actData.result[i].start_time;
 				actEndTime = actData.result[i].end_time;
-				console.log(actStartTime);
-				console.log(actEndTime);
-				console.log(actTitle);
+				// console.log(actStartTime);
+				// console.log(actEndTime);
+				// console.log(actTitle);
 
 				var actEvent = {
 					title: actTitle,
@@ -150,12 +150,98 @@
 
 		     } // close loop
 		     calendar.fullCalendar('addEventSource', allActEvents);
-			console.log(medData);
+			//console.log(medData);
 		},
 		function(error){
 			alert(JSON.stringify(error));
 		});
 
+
+		// ----read in data from BeMo database-----
+		var beMoData = el.data('BeMo');
+		beMoData.get()
+		.then(function(beMoData){
+			//alert(JSON.stringify(data));
+			console.log(beMoData.count);
+			console.log(beMoData.result);
+		 	var beMoTitle = "";
+		 	var beMoStartTime = "";
+		 	var beMoEndTime = "";
+
+			var allBeMoEvents =	{
+				    events: [],
+				    color: 'green',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < beMoData.count; i++) { 
+				console.log(i);
+		 	 	beMoTitle = "BEHA/MOOD: " + beMoData.result[i].bem;
+		 	 	beMoStartTime = beMoData.result[i].bemTime;
+		 	 	beMoEndTime = new Date(beMoStartTime.getTime() + 15*60000);
+		 		console.log(beMoStartTime);
+		 	 	console.log(beMoEndTime);
+		 	 	console.log(beMoTitle);
+
+				var beMoEvent = {
+					title: beMoTitle,
+					allDay: allDayBoolean,
+					start: beMoStartTime,
+					end: beMoEndTime,
+				}
+
+		 		 allBeMoEvents.events.push(beMoEvent);
+
+		      } // close loop
+		       calendar.fullCalendar('addEventSource', allBeMoEvents);
+		// 	console.log(allBeMoEvents);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+		// // ----read in data from sleep database-----
+		// var sleepData = el.data('sleep');
+		// sleepData.get()
+		// .then(function(sleepData){
+		// 	//alert(JSON.stringify(data));
+		// 	console.log(sleepData.count);
+		// 	console.log(sleepData.result);
+		//  	var sleepTitle = "";
+		//  	var sleepStartTime = "";
+		//  	var sleepEndTime = "";
+
+		// 	var allSleepEvents =	{
+		// 		    events: [],
+		// 		    color: 'blue',   // an option!
+		// 		    textColor: 'black' // an option!
+		// 		}
+
+		// 	for (var i = 0; i < sleepData.count; i++) { 
+		// 		console.log(i);
+		// //  	 	sleepTitle = "BEHA/MOOD: " + sleepData.result[i].bem;
+		// //  	 	sleepStartTime = sleepData.result[i].bemTime;
+		// //  	 	sleepEndTime = new Date(sleepStartTime.getTime() + 15*60000);
+		// //  		console.log(sleepStartTime);
+		// //  	 	console.log(sleepEndTime);
+		// //  	 	console.log(sleepTitle);
+
+		// // 		var sleepEvent = {
+		// // 			title: sleepTitle,
+		// // 			allDay: allDayBoolean,
+		// // 			start: sleepStartTime,
+		// // 			end: sleepEndTime,
+		// // 		}
+
+		// //  		 allSleepEvents.events.push(sleepEvent);
+
+		//        } // close loop
+		// //        calendar.fullCalendar('addEventSource', allSleepEvents);
+		// // // 	console.log(allSleepEvents);
+		// },
+		// function(error){
+		// 	alert(JSON.stringify(error));
+		// });
 
 
 
