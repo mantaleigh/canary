@@ -15,8 +15,10 @@ app.models.foodView.foodViewModel = (function() {
             var foodTime = $("#foodTimeInput").val();
             var foodNotes = $("#foodNotesInput").val();
 
+            console.log(foodDate);
             // dateTime object
             var dateTime = new Date(foodDate + " " + foodTime);
+            console.log(dateTime);
 
         }
     });
