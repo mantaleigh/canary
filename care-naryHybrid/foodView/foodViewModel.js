@@ -28,6 +28,13 @@ app.models.foodView.foodViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
+        alert("Data successfully entered.")
+        $("#foodNameInput").val("");
+        $("#foodGroupInput").val("");
+        $("#foodDateInput").val("");
+        $("#foodTimeInput").val("");
+        $("#foodNotesInput").val("");
+
         }
         });
         return viewModel;

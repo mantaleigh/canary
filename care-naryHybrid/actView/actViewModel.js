@@ -12,7 +12,8 @@ app.models.actView.actViewModel = (function() {
             var actName = $("#actNameInput").val();
             var actType = $("#actTypeInput").val();
             var oldActDate = $("#actDateInput").val();
-            var actTime = $("#actTimeInput").val();
+            var actStartTime = $("#actStartTimeInput").val();
+            var actEndTime = $("#actEndTimeInput").val();
             var actNotes = $("#actNotesInput").val();
 
             var actDate = oldActDate.split("-")[1] + "-" + oldActDate.split("-")[2] + "-" + oldActDate.split("-")[0]
@@ -22,9 +23,11 @@ app.models.actView.actViewModel = (function() {
             console.log(actTime);
             console.log(actNotes);
 
-            // dateTime object
-            var dateTime = new Date(actDate + " " + actTime);
-            console.log(dateTime);
+            // dateTime objects
+            var startDateTime = new Date(actDate + " " + actStartTime);
+            console.log(startDateTime);
+            var endDateTime = new Date(actDate + " " + actEndTime);
+            console.log(endDateTime);
             
                                     
             var el = new Everlive('TiQ179pLOVoq4iN1');
