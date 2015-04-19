@@ -18,8 +18,17 @@ app.models.sleepView.sleepViewModel = (function() {
             // dateTime object
             var awakeDateTime = new Date(awakeDate + " " + awakeTime);
             var asleepDateTime = new Date(asleepDate + " " + awakeTime);
-            console.log(awakeDateTime);
-            console.log(asleepDateTime);
+            
+            var el = new Everlive('TiQ179pLOVoq4iN1');
+            var data = el.data('sleep');
+            data.create({ 'end_time' : awakeDateTime, 'start_time' : asleepDateTime},
+                function(data){
+                    //alert(JSON.stringify(data));
+                    console.log({ });
+                },
+                function(error){
+                    alert(JSON.stringify(error));
+                });
 
         }
     });

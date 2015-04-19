@@ -23,6 +23,17 @@ app.models.behavView.behavViewModel = (function() {
             // dateTime object
             var dateTime = new Date(behavMoodDate + " " + behavMoodTime);
             console.log(dateTime);
+            
+            var el = new Everlive('TiQ179pLOVoq4iN1');
+            var data = el.data('BeMo');
+            data.create({ 'bem' : behavMood, 'bemNotes' : behavMoodNotes, 'bemTime': dateTime},
+                function(data){
+                    //alert(JSON.stringify(data));
+                    console.log({ });
+                },
+                function(error){
+                    alert(JSON.stringify(error));
+                });
 
         }
     });

@@ -19,7 +19,18 @@ app.models.medView.medViewModel = (function() {
 
             // dateTime object
             var dateTime = new Date(medDate + " " + medTime);
-
+            
+            
+            var el = new Everlive('TiQ179pLOVoq4iN1');
+            var data = el.data('Medication');
+            data.create({ 'name_of_med' : medName, 'quantity' : medAmount, 'time' : medDate, 'mNotes' : medNotes},
+                function(data){
+                    //alert(JSON.stringify(data));
+                    console.log({ 'name_of_med' : medName, 'quantity' : medAmount, 'time' : medDate, 'mNotes' : medNotes});
+                },
+                function(error){
+                    alert(JSON.stringify(error));
+                });
         }
     });
     return viewModel;
