@@ -247,7 +247,254 @@
 
 
 	});
-	
-	</script>
+        
+        
+    function refresh() { 
 
+		var calendar = $('#calendar').fullCalendar({
+			aspectRatio: 1, 
+			header: {
+				left: 'today prev,next', 
+				center: 'title', 
+				right: 'month,agendaWeek,agendaDay'
+			},
+
+			dayClick: function(date, jsEvent, view) { 
+				calendar.fullCalendar('changeView', 'agendaDay');
+				calendar.fullCalendar('gotoDate', date);
+			}
+
+		});
+
+       
+        
+		var allDayBoolean = false;
+
+
+		// ----read in data from Food database-----
+		var el = new Everlive('TiQ179pLOVoq4iN1');
+		var foodData = el.data('Food');
+		foodData.get()
+		.then(function(foodData){
+			//alert(JSON.stringify(data));
+			// console.log(foodData.count);
+			// console.log(foodData.result);
+			var foodTitle = "";
+			var foodStartTime = "";
+			var foodEndTime = "";
+
+			var allFoodEvents =	{
+				    events: [],
+				    color: 'red',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < foodData.count; i++) { 
+				// console.log(i);
+				foodTitle = "Food: " + foodData.result[i].food_name;
+				foodStartTime = foodData.result[i].time;
+				foodEndTime = new Date(foodStartTime.getTime() + 15*60000);
+				// console.log(foodStartTime);
+				// console.log(foodEndTime);
+				// console.log(foodTitle);
+
+				var foodEvent = {
+					title: foodTitle,
+					allDay: allDayBoolean,
+					start: foodStartTime,
+					end: foodEndTime,
+				}
+
+				 allFoodEvents.events.push(foodEvent);
+
+		    } // close loop
+		    calendar.fullCalendar('addEventSource', allFoodEvents);
+			//console.log(foodData);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+
+		// ----read in data from Medication database-----
+		var medData = el.data('Medication');
+		medData.get()
+		.then(function(medData){
+			//alert(JSON.stringify(data));
+			// console.log(actData.count);
+			// console.log(actData.result);
+			var medTitle = "";
+			var medStartTime = "";
+			var medEndTime = "";
+
+			var allMedEvents =	{
+				    events: [],
+				    color: 'orange',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < medData.count; i++) { 
+				// console.log(i);
+				medTitle = "MED: " + medData.result[i].name_of_med;
+				medStartTime = medData.result[i].time;
+				medEndTime = new Date(medStartTime.getTime() + 15*60000);
+				// console.log(medStartTime);
+				// console.log(medEndTime);
+				// console.log(medTitle);
+
+				var medEvent = {
+					title: medTitle,
+					allDay: allDayBoolean,
+					start: medStartTime,
+					end: medEndTime,
+				}
+
+				 allMedEvents.events.push(medEvent);
+
+		    } // close loop
+		    calendar.fullCalendar('addEventSource', allMedEvents);
+			//console.log(medData);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+		// ----read in data from Activity database-----
+		var actData = el.data('act');
+		actData.get()
+		.then(function(actData){
+			//alert(JSON.stringify(data));
+			// console.log(actData.count);
+			// console.log(actData.result);
+			var actTitle = "";
+			var actStartTime = "";
+			var actEndTime = "";
+
+			var allActEvents =	{
+				    events: [],
+				    color: 'purple',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < actData.count; i++) { 
+				// console.log(i);
+				actTitle = "ACT: " + actData.result[i].activity;
+				actStartTime = actData.result[i].start_time;
+				actEndTime = actData.result[i].end_time;
+				// console.log(actStartTime);
+				// console.log(actEndTime);
+				// console.log(actTitle);
+
+				var actEvent = {
+					title: actTitle,
+					allDay: allDayBoolean,
+					start: actStartTime,
+					end: actEndTime,
+				}
+
+				 allActEvents.events.push(actEvent);
+
+		     } // close loop
+		     calendar.fullCalendar('addEventSource', allActEvents);
+			//console.log(medData);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+
+		// ----read in data from BeMo database-----
+		var beMoData = el.data('BeMo');
+		beMoData.get()
+		.then(function(beMoData){
+			//alert(JSON.stringify(data));
+			console.log(beMoData.count);
+			console.log(beMoData.result);
+		 	var beMoTitle = "";
+		 	var beMoStartTime = "";
+		 	var beMoEndTime = "";
+
+			var allBeMoEvents =	{
+				    events: [],
+				    color: 'green',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < beMoData.count; i++) { 
+				console.log(i);
+		 	 	beMoTitle = "BEHA/MOOD: " + beMoData.result[i].bem;
+		 	 	beMoStartTime = beMoData.result[i].bemTime;
+		 	 	beMoEndTime = new Date(beMoStartTime.getTime() + 15*60000);
+		 		console.log(beMoStartTime);
+		 	 	console.log(beMoEndTime);
+		 	 	console.log(beMoTitle);
+
+				var beMoEvent = {
+					title: beMoTitle,
+					allDay: allDayBoolean,
+					start: beMoStartTime,
+					end: beMoEndTime,
+				}
+
+		 		 allBeMoEvents.events.push(beMoEvent);
+
+		      } // close loop
+		       calendar.fullCalendar('addEventSource', allBeMoEvents);
+		// 	console.log(allBeMoEvents);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
+		// ----read in data from sleep database-----
+		var sleepData = el.data('sleep');
+		sleepData.get()
+		.then(function(sleepData){
+			//alert(JSON.stringify(data));
+			console.log(sleepData.count);
+			console.log(sleepData.result);
+		 	var sleepTitle = "";
+		 	var sleepStartTime = "";
+		 	var sleepEndTime = "";
+
+			var allSleepEvents =  {
+				    events: [],
+				    color: 'blue',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+		 	for (var i = 0; i < sleepData.count; i++) { 
+		 		console.log(i);
+		  	 	sleepTitle = "SLEEP";
+		  	 	sleepStartTime = sleepData.result[i].start_time;
+		  	 	sleepEndTime = sleepData.result[i].end_time;
+		  		console.log(sleepStartTime);
+		  	 	console.log(sleepEndTime);
+		  	 	console.log(sleepTitle);
+
+				var sleepEvent = {
+					title: sleepTitle,
+					allDay: allDayBoolean,
+					start: sleepStartTime,
+					end: sleepEndTime,
+				}
+
+		  		 allSleepEvents.events.push(sleepEvent);
+
+		    } // close loop
+		       calendar.fullCalendar('addEventSource', allSleepEvents);
+		// 	console.log(allSleepEvents);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		    }
+        )
+
+	};
+        
+    $('#something').click(function() {
+    location.reload();
+    });
+	</script>
+    <center><button id="something" class="something">refresh</button></center>
 </div>
