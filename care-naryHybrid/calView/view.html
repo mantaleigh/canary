@@ -31,8 +31,8 @@
 		foodData.get()
 		.then(function(foodData){
 			//alert(JSON.stringify(data));
-			console.log(foodData.count);
-			console.log(foodData.result);
+			// console.log(foodData.count);
+			// console.log(foodData.result);
 			var foodTitle = "";
 			var foodStartTime = "";
 			var foodEndTime = "";
@@ -44,13 +44,13 @@
 				}
 
 			for (var i = 0; i < foodData.count; i++) { 
-				console.log(i);
+				// console.log(i);
 				foodTitle = "Food: " + foodData.result[i].food_name;
 				foodStartTime = foodData.result[i].time;
 				foodEndTime = new Date(foodStartTime.getTime() + 15*60000);
-				console.log(foodStartTime);
-				console.log(foodEndTime);
-				console.log(foodTitle);
+				// console.log(foodStartTime);
+				// console.log(foodEndTime);
+				// console.log(foodTitle);
 
 				var foodEvent = {
 					title: foodTitle,
@@ -71,13 +71,12 @@
 
 
 		// ----read in data from Medication database-----
-		var el = new Everlive('TiQ179pLOVoq4iN1');
 		var medData = el.data('Medication');
 		medData.get()
 		.then(function(medData){
 			//alert(JSON.stringify(data));
-			console.log(medData.count);
-			console.log(medData.result);
+			// console.log(actData.count);
+			// console.log(actData.result);
 			var medTitle = "";
 			var medStartTime = "";
 			var medEndTime = "";
@@ -89,13 +88,13 @@
 				}
 
 			for (var i = 0; i < medData.count; i++) { 
-				console.log(i);
+				// console.log(i);
 				medTitle = "MED: " + medData.result[i].name_of_med;
 				medStartTime = medData.result[i].time;
 				medEndTime = new Date(medStartTime.getTime() + 15*60000);
-				console.log(medStartTime);
-				console.log(medEndTime);
-				console.log(medTitle);
+				// console.log(medStartTime);
+				// console.log(medEndTime);
+				// console.log(medTitle);
 
 				var medEvent = {
 					title: medTitle,
@@ -113,6 +112,50 @@
 		function(error){
 			alert(JSON.stringify(error));
 		});
+
+		// ----read in data from Activity database-----
+		var actData = el.data('act');
+		actData.get()
+		.then(function(actData){
+			//alert(JSON.stringify(data));
+			console.log(actData.count);
+			console.log(actData.result);
+			var actTitle = "";
+			var actStartTime = "";
+			var actEndTime = "";
+
+			var allActEvents =	{
+				    events: [],
+				    color: 'purple',   // an option!
+				    textColor: 'black' // an option!
+				}
+
+			for (var i = 0; i < actData.count; i++) { 
+				console.log(i);
+				actTitle = "ACT: " + actData.result[i].activity;
+				actStartTime = actData.result[i].start_time;
+				actEndTime = actData.result[i].end_time;
+				console.log(actStartTime);
+				console.log(actEndTime);
+				console.log(actTitle);
+
+				var actEvent = {
+					title: actTitle,
+					allDay: allDayBoolean,
+					start: actStartTime,
+					end: actEndTime,
+				}
+
+				 allActEvents.events.push(actEvent);
+
+		     } // close loop
+		     calendar.fullCalendar('addEventSource', allActEvents);
+			console.log(medData);
+		},
+		function(error){
+			alert(JSON.stringify(error));
+		});
+
 
 
 
