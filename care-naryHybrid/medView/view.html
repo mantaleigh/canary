@@ -4,27 +4,27 @@
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
                     <label>Medication Name
-                        <input data-bind="value: medViewModel.model.medication" placeholder="Medication" type="text" required="true">
+                        <input data-bind="value: medViewModel.model.medication" placeholder="Medication" type="text" required="true" id="medNameInput">
                     </label>
                 </li>
                 <li>
                     <label>Medication Amount
-                        <input data-bind="value: medViewModel.model.mAmount" placeholder="Amount" type="text" required="true">
+                        <input data-bind="value: medViewModel.model.mAmount" placeholder="Amount" type="text" required="true" id="medAmountInput">
                     </label>
                 </li>
                 <li>
                     <label>Date
-                        <input data-bind="value: medViewModel.model.mDate" type="date" required="true">
+                        <input data-bind="value: medViewModel.model.mDate" type="date" required="true" id="medDateInput">
                    </label>
                  </li>
                 <li>
                     <label>Time
-                        <input data-bind="value: medViewModel.model.mTime" type="time" required="true">
+                        <input data-bind="value: medViewModel.model.mTime" type="time" required="true" id="medTimeInput">
                    </label>
                  </li>
                 <li>
                     <label>Notes
-                        <input data-bind="value: medViewModel.model.mnotes" placeholder="Notes" type="text">
+                        <input data-bind="value: medViewModel.model.mnotes" placeholder="Notes" type="text" id="medNotesInput">
                     </label>
                 </li>
             </ul>
