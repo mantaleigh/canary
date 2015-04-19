@@ -3,7 +3,8 @@ app.models.medView.medViewModel = (function() {
         model: {
             medication: undefined,
             mAmount: undefined,
-            mdatetime: undefined,
+            mdate: undefined,
+            mtime: undefined,
             mnotes: undefined,
         },
         submit: function() {},

@@ -4,11 +4,19 @@
 
 	<script>
 
-    $(document).ready(function() { 
+	$(document).ready(function() { 
 
-		$('#calendar').fullCalendar({});
+		$('#calendar').fullCalendar({
+			aspectRatio: 1, 
+			header: {
+				left: 'today prev,next', 
+				center: 'title', 
+				right: 'month,basicWeek,basicDay'
+			},
 
-    });
+		});
+
+	});
 	
 	</script>
 

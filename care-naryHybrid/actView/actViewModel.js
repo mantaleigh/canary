@@ -3,7 +3,8 @@ app.models.actView.actViewModel = (function() {
         model: {
             actType: undefined,
             activity: undefined,
-            actdatetime: undefined,
+            actDate: undefined,
+            actTime: undefined,
             actNotes: undefined,
         },
         submit: function() {},

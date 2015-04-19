@@ -2,8 +2,8 @@ app.models.foodView.foodViewModel = (function() {
     var viewModel = kendo.observable({
         model: {
             food: undefined,
-            date: undefined,
-            time: undefined,
+            foodDate: undefined,
+            foodTime: undefined,
             notes: undefined,
             foodGroup: undefined,
         },

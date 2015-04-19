@@ -8,6 +8,16 @@
                     </label>
                 </li>
                 <li>
+                    <label>Date
+                        <input data-bind="value: behavViewModel.model.behavDate" type="date">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: behavViewModel.model.behavTime" type="time">
+                   </label>
+                 </li>
+                <li>
                     <label>Notes
                         <input data-bind="value: behavViewModel.model.behavNotes" placeholder="Notes" type="text">
                     </label>
@@ -25,10 +35,10 @@
         </form>
     </div>
 
-            <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="home/view.html" data-icon="add">Input</a>
-                <a href="calView/view.html" data-icon="recents">Calendar</a>
-            </div>
-        </footer>
+    <footer data-role="footer">
+        <div data-role="tabstrip" id="navigation-container">
+            <a href="home/view.html" data-icon="add">Input</a>
+            <a href="calView/view.html" data-icon="recents">Calendar</a>
+        </div>
+    </footer>
 </div>

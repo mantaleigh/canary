@@ -13,10 +13,15 @@
                     </label>
                 </li>
                 <li>
-                    <label>Date/time
-                        <input data-bind="value: medViewModel.model.mdatetime" type="datetime-local">
-                    </label>
-                </li>
+                    <label>Date
+                        <input data-bind="value: medViewModel.model.mDate" type="date">
+                   </label>
+                 </li>
+                <li>
+                    <label>Time
+                        <input data-bind="value: medViewModel.model.mTime" type="time">
+                   </label>
+                 </li>
                 <li>
                     <label>Notes
                         <input data-bind="value: medViewModel.model.mnotes" placeholder="Notes" type="text">
@@ -35,10 +40,10 @@
         </form>
     </div>
 
-            <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="home/view.html" data-icon="add">Input</a>
-                <a href="calView/view.html" data-icon="recents">Calendar</a>
-            </div>
-        </footer>
+    <footer data-role="footer">
+        <div data-role="tabstrip" id="navigation-container">
+            <a href="home/view.html" data-icon="add">Input</a>
+            <a href="calView/view.html" data-icon="recents">Calendar</a>
+        </div>
+    </footer>
 </div>

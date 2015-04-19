@@ -1,8 +1,10 @@
 app.models.sleepView.sleepViewModel = (function() {
     var viewModel = kendo.observable({
         model: {
-            beginSleep: undefined,
-            endSleep: undefined,
+            beginSleepTime: undefined,
+            endSleepTime: undefined,
+            beginSleepDate: undefined,
+            endSleepDate: undefined,
         },
         submit: function() {},
         cancel: function() {}
