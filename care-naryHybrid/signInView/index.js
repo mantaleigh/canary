@@ -19,11 +19,44 @@ app.models.signInView.signInViewModel = (function() {
                     if (data && data.result) {
                         app.user = data.result;
                         app.mobileApp.navigate('home/view.html');
-                    }
-                },
-                function(error) {
-                    alert(JSON.stringify(error));
-                });
+
+
+                         //Use authentication to contact database
+
+                         var applicationSettings = {
+                              apiKey: 'TiQ179pLOVoq4iN1',
+                              scheme: 'https'
+                            };
+
+                            // initialize Backend Services SDK
+                            var el = new Everlive({
+                              apiKey: applicationSettings.apiKey,
+                            });
+
+                            el.Users.login(viewModel.model.username, // username
+                            
+                            viewModel.model.password) // password
+                            .then(function (data) { // success callback
+                                console.log("Successful login.");
+                            },
+                            function(error) { // error callback
+                                alert(JSON.stringify(error));
+                            });
+
+
+                      }
+                    },
+                    function(error) {
+                        alert(JSON.stringify(error));
+                    });
+
+
+
+           
+
+
+
+
 
         }
     });

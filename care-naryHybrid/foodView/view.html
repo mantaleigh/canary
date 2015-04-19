@@ -1,4 +1,47 @@
 <div data-role="view" id="food" data-title="Input Food" data-layout="main-nonav" data-model="app.models.foodView">
+
+<script>
+ console.log("Food Screen JS");
+$(document).ready(function() { 
+var foodSource = new kendo.data.DataSource({
+      type: "everlive",
+      transport: {
+        typeName: "Food"
+
+      },
+      schema: {
+        model: {
+          id: "Id",
+          fields: {
+            // default fields for Backend Services types
+            CreatedBy:  { type: "string" },
+            CreatedAt:  { type: "date" },
+            ModifiedAt: { type: "date" },
+
+            // type fields
+            Group:    { type: "string" }
+          }
+        }
+      }
+
+    });
+    
+
+    console.log(foodSource);
+    foodSource.fetch(function(){
+        var results = foodSource.aggregates().Group;
+        console.log(foodSource)
+        console.log(results); // displays "63 30 33"
+    });
+
+
+   });
+
+
+ console.log("END Food Screen JS");
+</script>
+
+
     <div id="foodViewModel" class="form-view">
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
