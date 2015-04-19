@@ -3,13 +3,17 @@
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li>
-                    <label>Activity Type
-                        <input data-bind="value: actViewModel.model.actType" data-role="dropdownlist">
-                    </label>
-                </li>
-                <li>
                     <label>Activity Name
                         <input data-bind="value: actViewModel.model.activity" placeholder="Activity" type="text">
+                    </label>
+                </li>
+                 <li>
+                    <label>Activity Type
+                        <select type="dropdown">
+                             <option value="physical">Physical</option>
+                             <option value="sedentary">Sedentary</option>
+                             <option value="mental">Mental</option>
+                        </select>
                     </label>
                 </li>
                 <li>
@@ -34,7 +38,7 @@
                 <a class="button button-block" data-role="button" href="../home/view.html">Back</a>
 
 
-                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: actViewModel.submit }">Confirm</a>
+                <a class="button button-block button-submit" data-role="button" data-bind="events: { click: actViewModel.submit }">Add to Calendar</a>
 
 
 
