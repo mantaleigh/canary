@@ -14,13 +14,30 @@ app.models.foodView.foodViewModel = (function() {
             var foodDate = $("#foodDateInput").val();
             var foodTime = $("#foodTimeInput").val();
             var foodNotes = $("#foodNotesInput").val();
+<<<<<<< HEAD
 
             console.log(foodDate);
             // dateTime object
             var dateTime = new Date(foodDate + " " + foodTime);
             console.log(dateTime);
 
+=======
+            
+            // dateTime object
+            var dateTime = new Date(foodDate + " " + foodTime);
+            
+            var el = new Everlive('TiQ179pLOVoq4iN1');
+            var data = el.data('Food');
+            data.create({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime},
+                function(data){
+                    //alert(JSON.stringify(data));
+                    console.log({ 'food_group' : foodGroup, 'food_name' : foodName, 'food_notes' : foodNotes, 'time' : dateTime});
+                },
+                function(error){
+                    alert(JSON.stringify(error));
+                });
+>>>>>>> 1807392ba861fbbbc9d10af88a6021eb6abaa5a4
         }
-    });
-    return viewModel;
+        });
+        return viewModel;
 })();
