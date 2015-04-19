@@ -34,7 +34,12 @@ app.models.behavView.behavViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
-
+            
+            alert("Data successfully entered.")
+            $("#behavMoodInput").val("");
+            $("#behavMoodTime").val("");
+            $("#behavMoodDate").val("");
+            $("#behavMoodNotes").val("");
         }
     });
     return viewModel;

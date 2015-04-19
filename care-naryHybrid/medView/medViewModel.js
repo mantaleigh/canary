@@ -31,6 +31,13 @@ app.models.medView.medViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
+            
+            alert("Data successfully entered.")
+            $("#medNotesInput").val("");
+            $("#medTimeInput").val("");
+            $("#medDateInput").val("");
+            $("#medAmountInput").val("");
+            $("#medNameInput").val("");
         }
     });
     return viewModel;

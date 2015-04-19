@@ -29,7 +29,13 @@ app.models.sleepView.sleepViewModel = (function() {
                 function(error){
                     alert(JSON.stringify(error));
                 });
-
+            
+            alert("Data successfully entered.")
+            $("#awakeTime").val("");
+            $("#awakeDate").val("");
+            $("#asleepTime").val("");
+            $("#asleepDate").val("");
+            
         }
     });
     return viewModel;
