@@ -2,6 +2,7 @@
 
 <script>
  console.log("Food Screen JS");
+
 $(document).ready(function() { 
 var foodSource = new kendo.data.DataSource({
       type: "everlive",
@@ -27,13 +28,18 @@ var foodSource = new kendo.data.DataSource({
     });
     
 
+
     console.log(foodSource);
     foodSource.fetch(function(){
-        var results = foodSource.aggregates().Group;
-        console.log(foodSource)
-        console.log(results); // displays "63 30 33"
-    });
+       var view = foodSource.view();
 
+        for (i = 0; i < view.length; i++) {
+              console.log(foodSource.at(i));
+              console.log(foodSource.at(i).Group);
+        }
+       
+      
+    });
 
    });
 
